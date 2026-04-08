@@ -70,21 +70,32 @@ export default function App() {
   };
 
   const handleItemChange = (id: string, field: keyof BillItem, value: string | number) => {
-    const updatedItems = bill.items.map((item) => {
-      if (item.id === id) {
-        const updatedItem = { ...item, [field]: value };
-        if (field === 'qty' || field === 'perUnit') {
-          updatedItem.amount = Number(updatedItem.qty) * Number(updatedItem.perUnit);
+  const updatedItems = bill.items.map((item) => {
+    if (item.id === id) {
+      let updatedItem = { ...item, [field]: value };
+
+      if (field === 'qty' || field === 'perUnit' || field === 'description') {
+        let amount = Number(updatedItem.qty) * Number(updatedItem.perUnit);
+
+        // 🔥 Auto-discount detection
+        if (
+          typeof updatedItem.description === 'string' &&
+          updatedItem.description.toLowerCase().includes('discount')
+        ) {
+          amount = -Math.abs(amount);
         }
-        return updatedItem;
+
+        updatedItem.amount = amount;
       }
-      return item;
-    });
 
-    const { total, balanceDue } = calculateTotals(updatedItems, bill.advance);
-    setBill({ ...bill, items: updatedItems, total, balanceDue });
-  };
+      return updatedItem;
+    }
+    return item;
+  });
 
+  const { total, balanceDue } = calculateTotals(updatedItems, bill.advance);
+  setBill({ ...bill, items: updatedItems, total, balanceDue });
+};
   const addItem = () => {
     setBill({
       ...bill,

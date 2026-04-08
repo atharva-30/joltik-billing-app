@@ -174,7 +174,7 @@ export default function App() {
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center overflow-hidden">
             <img 
-              src="/logo.png" 
+              src="/Logo.png" 
               alt="Joltik Logo" 
               className="w-full h-full object-contain p-1"
               onError={(e) => {

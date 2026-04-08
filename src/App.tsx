@@ -383,7 +383,7 @@ export default function App() {
                   <div className="flex items-center gap-3">
                     <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
                       <img 
-                        src="/logo.png" 
+                        src="/Logo.png" 
                         alt="Joltik Logo" 
                         className="w-full h-full object-contain"
                         referrerPolicy="no-referrer"

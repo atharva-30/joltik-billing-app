@@ -72,21 +72,21 @@ export default function App() {
   const handleItemChange = (id: string, field: keyof BillItem, value: string | number) => {
   const updatedItems = bill.items.map((item) => {
     if (item.id === id) {
-      let updatedItem = { ...item, [field]: value };
+      const updatedItem = { ...item, [field]: value };
 
-      if (field === 'qty' || field === 'perUnit' || field === 'description') {
-        let amount = Number(updatedItem.qty) * Number(updatedItem.perUnit);
+      // Always recalculate amount (not only on qty/perUnit)
+      let amount = Number(updatedItem.qty) * Number(updatedItem.perUnit);
 
-        // 🔥 Auto-discount detection
-        if (
-          typeof updatedItem.description === 'string' &&
-          updatedItem.description.toLowerCase().includes('discount')
-        ) {
-          amount = -Math.abs(amount);
-        }
+      // 🔥 Detect discount row
+      const isDiscount =
+        typeof updatedItem.description === 'string' &&
+        updatedItem.description.toLowerCase().includes('discount');
 
-        updatedItem.amount = amount;
+      if (isDiscount) {
+        amount = -Math.abs(amount);
       }
+
+      updatedItem.amount = amount;
 
       return updatedItem;
     }

@@ -155,7 +155,11 @@ export default function App() {
       const pdfHeight = pdf.internal.pageSize.getHeight();
       
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      pdf.save(`Bill_${bill.billNo || 'Draft'}_${bill.to || 'Client'}.pdf`);
+      const billNumber = bill.billNo
+  ? bill.billNo.toString().trim().replace(/\s+/g, '')
+  : 'Draft';
+
+pdf.save(`Bill-${billNumber}.pdf`);
     } catch (error) {
       console.error('PDF generation failed:', error);
       setNotification({ message: 'Failed to generate PDF. Please try printing instead.', type: 'error' });

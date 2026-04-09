@@ -200,7 +200,7 @@ pdf.save(`Bill-${billNumber}.pdf`);
             />
           </div>
           <div>
-            <h1 className="text-lg font-bold leading-tight">JOLTIK REELOGRAPHY</h1>
+            <h1 className="text-xl font-bold leading-tight">JOLTIK REELOGRAPHY</h1>
             <p className="text-xs text-stone-500 font-medium">Bill & Estimate Generator</p>
           </div>
         </div>

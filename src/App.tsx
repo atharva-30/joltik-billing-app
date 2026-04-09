@@ -384,7 +384,7 @@ pdf.save(`Bill-${billNumber}.pdf`);
 
         {/* Preview Section */}
         <section className="relative">
-          <div className="sticky top-24">
+          <div className="sticky top-16">
             <div className="bg-[#ffffff] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] rounded-sm overflow-hidden print-container mx-auto" ref={printRef} style={{ width: '794px' }}>
               {/* The Template Rendering */}
               <div className="p-[0.5in] aspect-[1/1.414] bg-[#ffffff] text-[#000000] flex flex-col border border-[#e7e5e4] print:border-0" style={{ width: '794px', height: '1123px' }}>

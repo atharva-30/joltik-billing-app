@@ -229,7 +229,7 @@ pdf.save(`Bill-${billNumber}.pdf`);
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <main className="max-w-5xl mx-auto pt-2 px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Form Section */}
         <section className="space-y-6 no-print">
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 space-y-6">

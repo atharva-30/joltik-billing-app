@@ -394,7 +394,7 @@ pdf.save(`Bill-${billNumber}.pdf`);
                   <span>|| Shree Swami Samarth ||</span>
                 </div>
 
-                <div className="flex justify-between items-start mb-6">
+                <div className="flex justify-between items-start mb-2">
                   <div className="flex items-center gap-3">
                     <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
                       <img 
@@ -419,7 +419,7 @@ pdf.save(`Bill-${billNumber}.pdf`);
                   </div>
                 </div>
 
-                <div className="bg-[#d6d3d1] text-center py-1 font-serif font-bold text-lg mb-4 border-y border-[#000000]">
+                <div className="bg-[#d6d3d1] text-center py-1 font-serif font-bold text-lg mb-2 border-y border-[#000000]">
                   BILL / ESTIMATE
                 </div>
 

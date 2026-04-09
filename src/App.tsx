@@ -142,7 +142,7 @@ export default function App() {
       element.style.height = '1123px'; // A4 height at 96 DPI
       
       const canvas = await toCanvas(element, {
-        pixelRatio: 3, // Higher quality
+        pixelRatio: 1.5, // Higher quality
         backgroundColor: '#ffffff',
       });
       

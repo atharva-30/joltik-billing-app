@@ -389,7 +389,7 @@ pdf.save(`Bill-${billNumber}.pdf`);
               {/* The Template Rendering */}
               <div className="p-[0.5in] aspect-[1/1.414] bg-[#ffffff] text-[#000000] flex flex-col border border-[#e7e5e4] print:border-0" style={{ width: '794px', height: '1123px' }}>
                 {/* Header */}
-                <div className="flex justify-between text-[10px] font-serif italic mb-2">
+                <div className="flex justify-between text-[10px] font-serif italic mb-1">
                   <span>|| Shree Ganeshay Namah ||</span>
                   <span>|| Shree Swami Samarth ||</span>
                 </div>
@@ -419,7 +419,7 @@ pdf.save(`Bill-${billNumber}.pdf`);
                   </div>
                 </div>
 
-                <div className="bg-[#d6d3d1] text-center py-1 font-serif font-bold text-lg mb-2 border-y border-[#000000]">
+                <div className="bg-[#d6d3d1] text-center py-[2px] font-serif font-bold text-lg mb-1 border-y border-[#000000]">
                   BILL / ESTIMATE
                 </div>
 
